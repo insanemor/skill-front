@@ -1,0 +1,38 @@
+{
+  "name": "@insanemor/painel-ins",
+  "version": "1.0.0",
+  "description": "Instalador da skill painel-ins para Claude Code — linguagem visual \"command center\" (dashboard cyberpunk: dark near-black, neon verde, HUD/terminal).",
+  "bin": {
+    "painel-ins": "bin/cli.js"
+  },
+  "scripts": {
+    "test": "node bin/cli.js --help"
+  },
+  "engines": {
+    "node": ">=16.7.0"
+  },
+  "keywords": [
+    "claude",
+    "claude-code",
+    "skill",
+    "agent-skill",
+    "design-system",
+    "dashboard",
+    "cyberpunk",
+    "ui",
+    "painel-ins"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/insanemor/skill-front.git"
+  },
+  "bugs": {
+    "url": "https://github.com/insanemor/skill-front/issues"
+  },
+  "homepage": "https://github.com/insanemor/skill-front#readme",
+  "author": "Rodrigo Moreira",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  }
+}

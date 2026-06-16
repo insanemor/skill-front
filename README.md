@@ -7,6 +7,32 @@ microanimacoes).
 
 ![Preview painel-ins](.claude/skills/painel-ins/examples/html-css/screenshot.png)
 
+## Instalação
+
+Instale a skill no seu projeto com **um comando** (copia para `.claude/skills/`):
+
+```bash
+# no diretorio do projeto
+npx @insanemor/painel-ins
+```
+
+```bash
+# ou disponivel em todos os projetos (global do usuario)
+npx @insanemor/painel-ins --global
+```
+
+| Opção | Efeito |
+|---|---|
+| _(padrão)_ | instala em `./.claude/skills/painel-ins` (projeto atual) |
+| `--global`, `-g` | instala em `~/.claude/skills/painel-ins` |
+| `--dir <path>` | usa um diretório `skills` específico |
+| `--force`, `-f` | sobrescreve uma instalação existente |
+| `--help`, `-h` | ajuda |
+
+Depois, abra o Claude Code no projeto e use **`/painel-ins`** (ou peça um dashboard
+— a skill é acionada automaticamente). O instalador é enxuto (~84 kB): leva o
+conteúdo textual da skill; os screenshots da galeria ficam aqui no repositório.
+
 ## Objetivo
 
 Padronizar a aparencia de qualquer front-end — dashboard, painel, tela de admin

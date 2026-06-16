@@ -1,0 +1,13 @@
+# Publica apenas o essencial: CLI + conteudo textual da skill.
+# Screenshots (9 MB) ficam so no repositorio/GitHub — Claude le a skill como
+# texto, entao as imagens nao sao necessarias no pacote instalado.
+*.png
+
+# docs voltadas a humanos (a skill ja se documenta sozinha)
+docs/
+
+# cruft
+*.tgz
+*.log
+node_modules/
+.DS_Store
