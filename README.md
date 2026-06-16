@@ -9,17 +9,21 @@ microanimacoes).
 
 ## Instalação
 
-Instale a skill no seu projeto com **um comando** (copia para `.claude/skills/`):
+Instale direto deste repositório no GitHub — **um comando**, sem publicar em
+registro nenhum (copia a skill para `.claude/skills/`):
 
 ```bash
 # no diretorio do projeto
-npx @insanemor/painel-ins
+npx github:insanemor/skill-front
 ```
 
 ```bash
 # ou disponivel em todos os projetos (global do usuario)
-npx @insanemor/painel-ins --global
+npx github:insanemor/skill-front --global
 ```
+
+> Roda em qualquer projeto. Para fixar uma versão, use uma tag/branch:
+> `npx github:insanemor/skill-front#v1.0.0`.
 
 | Opção | Efeito |
 |---|---|

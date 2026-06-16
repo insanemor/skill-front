@@ -44,8 +44,8 @@ ${bold(green('painel-ins'))} ${dim('· instalador da skill (Claude Code)')}
 linguagem visual "command center" — dashboard cyberpunk, neon verde, HUD/terminal
 
 ${bold('USO')}
-  npx ${pkg.name}            ${dim('# instala em ./.claude/skills/painel-ins')}
-  npx ${pkg.name} --global   ${dim('# instala em ~/.claude/skills/painel-ins')}
+  npx github:insanemor/skill-front            ${dim('# instala em ./.claude/skills/painel-ins')}
+  npx github:insanemor/skill-front --global   ${dim('# instala em ~/.claude/skills/painel-ins')}
 
 ${bold('OPCOES')}
   -g, --global       instala no diretorio do usuario (~/.claude/skills)
