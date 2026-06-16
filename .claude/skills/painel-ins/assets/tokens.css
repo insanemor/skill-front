@@ -1,0 +1,86 @@
+/* painel-ins — tokens base (agnostico de framework)
+ * Formato HSL "H S% L%" para compor com hsl(var(--x) / <alpha>).
+ * Esta e a fonte da verdade das cores. Nao espalhe hex pelo codigo. */
+
+:root {
+  /* Superficies */
+  --background: 220 20% 4%;
+  --foreground: 150 100% 90%;
+  --card: 220 20% 7%;
+  --card-foreground: 150 80% 90%;
+  --popover: 220 20% 6%;
+  --popover-foreground: 150 80% 90%;
+
+  /* Marca / acoes */
+  --primary: 150 100% 45%;            /* neon verde dominante */
+  --primary-foreground: 220 20% 4%;
+  --secondary: 260 100% 65%;          /* roxo */
+  --secondary-foreground: 0 0% 98%;
+  --accent: 150 60% 40%;
+  --accent-foreground: 220 20% 4%;
+  --destructive: 0 85% 55%;
+  --destructive-foreground: 0 0% 98%;
+
+  /* Neutros / utilitarios */
+  --muted: 220 15% 12%;
+  --muted-foreground: 150 20% 55%;
+  --border: 150 40% 12%;
+  --input: 220 15% 14%;
+  --ring: 150 100% 45%;
+  --radius: 0.5rem;
+
+  /* Series de grafico */
+  --chart-1: 150 100% 45%;   /* verde  */
+  --chart-2: 190 100% 50%;   /* ciano  */
+  --chart-3: 260 100% 65%;   /* roxo   */
+  --chart-4: 45 100% 55%;    /* amarelo*/
+  --chart-5: 0 85% 55%;      /* vermelho*/
+
+  /* Sidebar */
+  --sidebar-background: 220 20% 5%;
+  --sidebar-foreground: 150 60% 70%;
+  --sidebar-primary: 150 100% 45%;
+  --sidebar-primary-foreground: 220 20% 4%;
+  --sidebar-accent: 220 15% 10%;
+  --sidebar-accent-foreground: 150 80% 80%;
+  --sidebar-border: 150 40% 12%;
+  --sidebar-ring: 150 100% 45%;
+
+  /* Paleta neon (acentos por categoria) */
+  --neon-orange: 28 100% 55%;   /* #ff8c1a */
+  --neon-green: 152 100% 45%;   /* #00e676 */
+  --neon-blue: 187 100% 42%;    /* #00bcd4 */
+  --neon-purple: 255 100% 76%;  /* #b388ff */
+  --neon-red: 0 100% 66%;       /* #ff5252 */
+  --neon-yellow: 47 100% 62%;   /* #ffd740 */
+
+  /* Tipografia */
+  --font-display: 'Orbitron', ui-sans-serif, system-ui, sans-serif;
+  --font-heading: 'Orbitron', ui-sans-serif, system-ui, sans-serif;
+  --font-body: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+/* O tema e dark por natureza; .dark repete :root para compatibilidade
+ * com libs que alternam classe (ex.: shadcn/next-themes). */
+.dark {
+  --background: 220 20% 4%;
+  --foreground: 150 100% 90%;
+  --card: 220 20% 7%;
+  --card-foreground: 150 80% 90%;
+  --popover: 220 20% 6%;
+  --popover-foreground: 150 80% 90%;
+  --primary: 150 100% 45%;
+  --primary-foreground: 220 20% 4%;
+  --secondary: 260 100% 65%;
+  --secondary-foreground: 0 0% 98%;
+  --accent: 150 60% 40%;
+  --accent-foreground: 220 20% 4%;
+  --destructive: 0 85% 55%;
+  --destructive-foreground: 0 0% 98%;
+  --muted: 220 15% 12%;
+  --muted-foreground: 150 20% 55%;
+  --border: 150 40% 12%;
+  --input: 220 15% 14%;
+  --ring: 150 100% 45%;
+}
