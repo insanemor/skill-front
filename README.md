@@ -60,7 +60,8 @@ anima de forma discreta. Detalhes em [`docs/painel-ins.md`](docs/painel-ins.md).
 │   └── effects.md
 └── examples/
     ├── html-css/            # dashboard completo autocontido (sem build) + 3 screenshots
-    └── react-tailwind/      # implementacao de referencia (MetricCard, Sidebar, AppLayout)
+    ├── react-tailwind/      # implementacao de referencia (MetricCard, Sidebar, AppLayout)
+    └── reference-app/       # galeria de 9 telas do app original (catalogo visual completo)
 ```
 
 ## Exemplo vivo
@@ -71,6 +72,11 @@ valida a skill e serve de espelho ao montar telas novas. Cobre todos os pilares 
 um catalogo amplo de componentes — tabela de dados, radial gauges, alertas,
 formulario completo, tabs, overlays e modal/dialog. Veja a galeria de prints na
 [documentacao](docs/painel-ins.md#5-galeria-de-componentes).
+
+Alem disso, a [galeria do app de referencia](.claude/skills/painel-ins/examples/reference-app/)
+(9 telas: Dashboard, Analytics, Logs, Data Grid, Systems, Model Hub, Docs, Kanban,
+Settings) e o catalogo visual mais amplo — todos os campos, componentes, graficos
+e animacoes de entrada/troca de tela.
 
 ```bash
 # a partir de .claude/skills/painel-ins/

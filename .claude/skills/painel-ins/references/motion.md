@@ -32,6 +32,25 @@ animate: { opacity: 1, y: 0 }
 transition: { delay: index * 0.1, duration: 0.5 }
 ```
 
+**Transicao entre telas** (troca de rota): a cada navegacao, a tela que entra
+re-dispara a entrada de pagina e seus blocos chegam em stagger. Observado no app
+de referencia: o **titulo entra primeiro**, depois os cards (fade + `y` para
+cima, `delay` por indice). Em React, dê um `key={rota}` ao container da pagina
+(com `AnimatePresence`) para o mount re-animar a cada troca:
+```
+<AnimatePresence mode="wait">
+  <motion.main key={pathname}
+    initial={{ opacity: 0, y: 10 }}
+    animate={{ opacity: 1, y: 0 }}
+    exit={{ opacity: 0 }}
+    transition={{ duration: 0.4, ease: easeOut }}>
+    {/* filhos com stagger via delay: index * 0.08 */}
+  </motion.main>
+</AnimatePresence>
+```
+Sem framer-motion: aplique uma classe de entrada (`@keyframes` fade+translateY)
+ao montar a tela e escalone com `animation-delay: calc(var(--i) * 0.08s)`.
+
 **Hover de card:** `y: -2` + box-shadow glow, `duration 0.2`.
 
 **Tap:** `scale: 0.97` (botoes, itens clicaveis).

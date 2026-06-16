@@ -116,7 +116,66 @@ Com backdrop semitransparente (overlay desfocado, foco no card):
 
 ---
 
-## 6. Como aplicar (workflow)
+## 6. Galeria de telas — app de referencia
+
+Capturas do app onde a skill foi originalmente prototipada
+([fractal-neural-command-core.base44.app](https://fractal-neural-command-core.base44.app)) —
+um SPA React com 9 telas, cada uma exercitando um conjunto distinto de campos e
+componentes. E o catalogo visual mais completo da linguagem. Inventario por tela
+e notas em [`examples/reference-app/README.md`](../.claude/skills/painel-ins/examples/reference-app/README.md).
+
+**Dashboard** — KPI cards, bar/donut/area/scatter charts, radial gauges, deploy
+pipeline, activity heatmap, status list e feed ao vivo:
+
+![Dashboard](../.claude/skills/painel-ins/examples/reference-app/01-dashboard.png)
+
+**Analytics** — bar agrupado, line chart, donut com legenda, arc gauges e date range picker:
+
+![Analytics](../.claude/skills/painel-ins/examples/reference-app/02-analytics.png)
+
+**Logs** — viewer de eventos em tempo real, filtros por nivel, badges, Pause/Clear:
+
+![Logs](../.claude/skills/painel-ins/examples/reference-app/03-logs.png)
+
+**Data Grid** — tabela densa com ordenacao, busca, filtros, status badges, barras inline e paginacao:
+
+![Data Grid](../.claude/skills/painel-ins/examples/reference-app/04-data-grid.png)
+
+**Systems** — radial gauges, progress bars, slider de replicas, date picker e dropzone de upload:
+
+![Systems](../.claude/skills/painel-ins/examples/reference-app/05-systems.png)
+
+**Model Hub** — selection cards (com check), sliders com +/- e dropzone grande de upload:
+
+![Model Hub](../.claude/skills/painel-ins/examples/reference-app/06-model-hub.png)
+
+**Docs** — template cards, text input, textarea, tag input e select:
+
+![Docs](../.claude/skills/painel-ins/examples/reference-app/07-docs.png)
+
+**Kanban** — board drag-and-drop com colunas, cards de tarefa, priority badges e tags:
+
+![Kanban](../.claude/skills/painel-ins/examples/reference-app/08-kanban.png)
+
+**Settings** — tabs, inputs, selects, toggle switches, painel de info e botoes de acao:
+
+![Settings](../.claude/skills/painel-ins/examples/reference-app/09-settings.png)
+
+### Animacoes (entrada e troca de tela)
+
+- **Entrada de tela:** o titulo aparece primeiro; os cards entram em **stagger**
+  com fade + leve translate para cima (`opacity 0→1`, `y 10→0`, delay por indice).
+- **Troca de rota:** cada navegacao re-dispara essa entrada na nova tela e a barra
+  indicadora da sidebar desliza ate o item ativo.
+- **Vivas/ambiente:** matrix rain de fundo, graficos atualizando, pulsos de status,
+  cursor piscando nos logs.
+
+Especificacao canonica (duracoes, easings, snippets) em
+[`references/motion.md`](../.claude/skills/painel-ins/references/motion.md).
+
+---
+
+## 7. Como aplicar (workflow)
 
 1. Identifique o **stack-alvo** do projeto.
 2. **Instale os tokens**: Tailwind → mapeie no `theme.extend.colors` apontando
@@ -132,7 +191,7 @@ Com backdrop semitransparente (overlay desfocado, foco no card):
 
 ---
 
-## 7. Indice de referencias
+## 8. Indice de referencias
 
 Carregadas sob demanda pela skill:
 
@@ -148,7 +207,7 @@ Carregadas sob demanda pela skill:
 
 ---
 
-## 8. Rodar o exemplo localmente
+## 9. Rodar o exemplo localmente
 
 Por causa do import relativo dos tokens (`../../assets/tokens.css`), sirva a
 partir da **raiz da skill**:
