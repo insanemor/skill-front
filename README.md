@@ -60,6 +60,7 @@ anima de forma discreta. Detalhes em [`docs/painel-ins.md`](docs/painel-ins.md).
 │   └── effects.md
 └── examples/
     ├── html-css/            # dashboard completo autocontido (sem build) + 3 screenshots
+    ├── html-css-app/        # SPA rodavel: reproducao das 9 telas (roteamento + animacoes)
     ├── react-tailwind/      # implementacao de referencia (MetricCard, Sidebar, AppLayout)
     └── reference-app/       # galeria de 9 telas do app original (catalogo visual completo)
 ```

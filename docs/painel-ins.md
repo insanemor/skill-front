@@ -207,17 +207,22 @@ Carregadas sob demanda pela skill:
 
 ---
 
-## 9. Rodar o exemplo localmente
+## 9. Exemplos rodaveis
 
-Por causa do import relativo dos tokens (`../../assets/tokens.css`), sirva a
-partir da **raiz da skill**:
+Tres exemplos acompanham a skill (sirva sempre a partir da **raiz da skill**, por
+causa do import `../../assets/tokens.css`):
 
 ```bash
 # a partir de .claude/skills/painel-ins/
 python3 -m http.server 4321
-# abra http://127.0.0.1:4321/examples/html-css/
 ```
 
+- **`examples/html-css/`** — kitchen-sink de componentes numa pagina unica
+  (abra `…/examples/html-css/`). Melhor para ver todos os campos/overlays juntos.
+- **`examples/html-css-app/`** — **reproducao rodavel das 9 telas** do app de
+  referencia (abra `…/examples/html-css-app/`): SPA com roteamento por hash,
+  animacoes de entrada/troca de tela e biblioteca de graficos propria. Fiel aos
+  prints da secao 6. Ver [README](../.claude/skills/painel-ins/examples/html-css-app/README.md).
+- **`examples/react-tailwind/`** — implementacao de referencia em React/Tailwind.
+
 As 3 fontes vem do Google Fonts via `@import` — requer internet na primeira carga.
-Instrucoes de regeneracao dos screenshots no
-[README do exemplo](../.claude/skills/painel-ins/examples/html-css/README.md).
