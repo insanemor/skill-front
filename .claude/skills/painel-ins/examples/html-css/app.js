@@ -389,3 +389,50 @@ document.querySelectorAll('[data-toast]').forEach((btn) => {
     toast(k, msg[0], msg[1]);
   });
 });
+
+/* ---------- Dropdowns da topbar (PADRAO: usuario + notificacoes) ---------- */
+(function topbarDropdowns() {
+  const drops = [...document.querySelectorAll('.topbar .dropdown')];
+  const closeAll = (except) => drops.forEach((d) => { if (d !== except) { d.classList.remove('open'); d.querySelector('button')?.setAttribute('aria-expanded', 'false'); } });
+  drops.forEach((d) => {
+    const trigger = d.querySelector('button');
+    trigger.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const willOpen = !d.classList.contains('open');
+      closeAll(d);
+      d.classList.toggle('open', willOpen);
+      trigger.setAttribute('aria-expanded', String(willOpen));
+    });
+    d.querySelector('.popover')?.addEventListener('click', (e) => e.stopPropagation());
+  });
+  document.addEventListener('click', () => closeAll(null));
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeAll(null); });
+
+  const NOTIFS = [
+    { c: '--neon-green', t: 'Deploy concluído', x: 'build #4821 publicado em 6 regiões · 0 erros', g: 'agora', ic: '<path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/>' },
+    { c: '--neon-yellow', t: 'Memória acima de 80%', x: 'node-7842-eu-west pode precisar de auto-scale', g: '2 min', ic: '<path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><path d="M12 9v4M12 17h.01"/>' },
+    { c: '--neon-blue', t: 'Nova versão disponível', x: 'v2.4.2 pronta para rollout gradual', g: '18 min', ic: '<circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/>' },
+    { c: '--neon-red', t: 'Conexão perdida', x: 'node-3-sa-east offline há 42s · retry ativo', g: '1 h', ic: '<circle cx="12" cy="12" r="10"/><path d="m15 9-6 6M9 9l6 6"/>' },
+  ];
+  const list = document.getElementById('notifList');
+  const badge = document.getElementById('notifBadge');
+  const syncBadge = () => { badge.style.display = list.querySelector('.unread') ? 'block' : 'none'; };
+  list.innerHTML = NOTIFS.map((n, i) => `
+    <div class="notif-item ${i < 3 ? 'unread' : ''}" style="--c:var(${n.c})">
+      <span class="notif-ic">${svg(n.ic)}</span>
+      <div class="notif-body"><p class="nt">${n.t}</p><p class="nx">${n.x}</p><p class="ng">${n.g} atrás</p></div>
+    </div>`).join('');
+  syncBadge();
+  list.addEventListener('click', (e) => { const it = e.target.closest('.notif-item'); if (it) { it.classList.remove('unread'); syncBadge(); } });
+  document.getElementById('notifReadAll').addEventListener('click', () => { list.querySelectorAll('.unread').forEach((el) => el.classList.remove('unread')); syncBadge(); });
+  document.querySelector('.pop-allbtn')?.addEventListener('click', () => toast('info', 'Notificações', 'abrindo central de notificações'));
+
+  document.querySelectorAll('#userDropdown .menu-flat .mi').forEach((mi) => {
+    mi.addEventListener('click', () => {
+      closeAll(null);
+      const label = mi.textContent.trim();
+      if (/sair/i.test(label)) toast('warn', 'Sessão encerrada', 'até logo, Rodrigo');
+      else toast('info', label, 'ação de exemplo');
+    });
+  });
+})();

@@ -41,7 +41,10 @@ igual a largura da sidebar e `z-index` acima das texturas.
 ## Topbar
 
 - `height: 64px` (`h-16`), alinhada ao conteudo (apos a sidebar).
-- Tipicamente: breadcrumb/titulo a esquerda, busca/acoes/perfil a direita.
+- Esquerda: busca (ou breadcrumb/titulo). Direita: chips de status + relogio.
+- **Obrigatorio a direita (regra 7):** dropdown de **notificacoes** (sino com
+  badge) e dropdown de **usuario** (avatar → editar perfil, preferencias, sair).
+  Nunca entregar uma topbar sem esses dois. Anatomia em `references/components.md`.
 - Mesma linguagem: fundo translucido, borda inferior `border`, texto mono.
 
 ## Grids de conteudo

@@ -41,6 +41,7 @@ Tailwind, styled-components, etc.). Se nao houver, copie `assets/tokens.css`.
 4. **Glow e efeito, nao estrutura** — nunca dependa de glow para legibilidade.
 5. **Labels e metadados** em `font-mono uppercase tracking-wider`; titulos em `font-display`.
 6. **Animacao discreta** — se distrair, esta errado. Respeite `prefers-reduced-motion`.
+7. **Topbar SEMPRE tem dois dropdowns** (nao pode faltar em nenhuma entrega): (a) **menu do usuario** no avatar/nome — abre com perfil do usuario + itens `Editar perfil`, `Configuracoes da conta`, `Preferencias`, `Atalhos de teclado`, separador e `Sair` (danger); (b) **dropdown de notificacoes** no sino — painel com titulo, `marcar todas como lidas`, lista de itens (icone colorido + titulo + texto + tempo + ponto de nao-lido) e rodape `Ver todas`. Anatomia em `references/components.md`; exemplos vivos em `examples/html-css/` e `examples/html-css-app/`.
 
 ## Como aplicar (workflow)
 

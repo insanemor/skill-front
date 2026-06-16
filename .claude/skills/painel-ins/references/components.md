@@ -37,6 +37,32 @@ via um `colorMap`: `{ bg: cor/10, border: cor/20, text: cor, glow: glow-cor }`.
   desloca `x:+4`), ativo (`bg-primary/10 text-primary` + barra indicadora a
   esquerda animada com `layoutId`).
 
+## Topbar + dropdowns OBRIGATORIOS
+
+A barra superior (sticky, `backdrop-blur`) tem busca a esquerda e, a direita,
+chips de status + relogio e **sempre estes dois dropdowns** (regra 7 do
+`SKILL.md` — nao podem faltar em nenhuma entrega):
+
+**1. Menu do usuario** — gatilho = avatar (+ nome/role opcional + chevron que
+gira ao abrir). Popover (`popover` ancorado a direita) com:
+- Cabecalho com avatar maior + nome + email.
+- Lista de itens (icone lucide + label): **Editar perfil**, **Configuracoes da
+  conta**, **Preferencias**, **Atalhos de teclado**, separador, **Sair** (variante
+  `danger`, hover vermelho).
+
+**2. Dropdown de notificacoes** — gatilho = sino (`icon-btn`) com ponto de alerta
+(`dot-badge`) quando ha nao-lidas. Popover com:
+- Cabecalho: titulo "Notificacoes" + acao "marcar todas como lidas".
+- Lista de itens: icone colorido por tipo (verde/azul/amarelo/vermelho) + titulo +
+  texto + tempo ("2 min atras"); itens nao-lidos com fundo sutil `primary/5` e um
+  ponto neon a esquerda. Clicar marca como lido e atualiza o badge.
+- Rodape: "Ver todas as notificacoes".
+
+Comportamento (ambos): abrir um fecha o outro; clique fora ou `Esc` fecham;
+`aria-haspopup`/`aria-expanded` nos gatilhos. Implementacao viva em
+`examples/html-css/` e `examples/html-css-app/` (classes `.popover`, `.user-btn`,
+`.menu-flat`, `.notif-pop`, `.notif-item`, `.dot-badge`).
+
 ## Widget de grafico
 
 - Card com cabecalho: titulo (`font-display`/`font-semibold`) + legenda/seletor.
