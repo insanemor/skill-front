@@ -8,6 +8,17 @@ produz na pratica.
 > Fonte da verdade do conteudo: [`.claude/skills/painel-ins/`](../.claude/skills/painel-ins/).
 > Esta pagina e um guia de leitura; os arquivos da skill mandam em caso de divergencia.
 
+## Instalar e usar (resumo)
+
+```bash
+npx github:insanemor/skill-front            # instala em ./.claude/skills
+npx github:insanemor/skill-front --global   # global do usuario (~/.claude/skills)
+```
+
+Depois, no Claude Code: peca uma UI no estilo (ativacao automatica) ou invoque
+`/painel-ins <o que voce quer>`. Passo a passo completo no
+[README](../README.md#como-usar); workflow de aplicacao na secao 7.
+
 ---
 
 ## 1. Por que existe

@@ -51,16 +51,45 @@ os tokens no `theme`; quando nao ha, importa-se `assets/tokens.css`.
 
 ## Como usar
 
-A skill e ativada automaticamente pelo Claude Code ao criar/estilizar/revisar um
-front-end que deva seguir esse modelo, ou manualmente via:
+Depois de instalar, a skill já está disponível no Claude Code daquele projeto.
+Há duas formas de acioná-la:
+
+**1. Automática** — basta pedir uma interface no estilo. O Claude detecta e aplica
+a linguagem sozinho:
 
 ```
-/painel-ins crie um dashboard de monitoramento de nos
+crie um dashboard de monitoramento de nós
+estilize esta tela de login no padrão command center
+revise este componente e deixe no nosso visual
 ```
 
-O fluxo que a skill aplica: detecta o stack → instala os tokens → carrega as 3
-fontes → aplica efeitos globais → monta componentes pela anatomia de referencia →
-anima de forma discreta. Detalhes em [`docs/painel-ins.md`](docs/painel-ins.md).
+**2. Explícita** — invoque pelo nome com `/painel-ins`:
+
+```
+/painel-ins crie um painel de analytics com gráficos e uma tabela de dados
+/painel-ins monte uma tela de settings com abas e toggles
+```
+
+**O que o Claude faz** ao aplicar a skill: detecta o stack do projeto → instala os
+tokens (Tailwind `theme` ou `assets/tokens.css`) → carrega as 3 fontes → aplica
+efeitos globais (grid, scanline, glow) → monta os componentes pela anatomia de
+referência → anima de forma discreta. A **topbar sempre inclui** os dropdowns de
+usuário e de notificações (componentes obrigatórios da skill).
+
+**O que você recebe:** uma UI fiel ao modelo — fundo near-black, neon verde, voz
+HUD/terminal, microanimações de entrada/troca de tela — derivada dos tokens (zero
+cor hex solta no código).
+
+> **Espelhe os exemplos.** A skill traz exemplos rodáveis para o Claude (e você)
+> usarem de referência: `examples/html-css-app/` (SPA com as 9 telas),
+> `examples/html-css/` (kitchen-sink de componentes) e `examples/react-tailwind/`.
+> Detalhes e a galeria de telas em [`docs/painel-ins.md`](docs/painel-ins.md).
+
+### Verificar a instalação
+
+```bash
+ls .claude/skills/painel-ins/SKILL.md   # deve existir após instalar
+```
 
 ## O DNA em 10 segundos
 
